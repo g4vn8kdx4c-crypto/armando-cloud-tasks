@@ -1,74 +1,126 @@
-Armando Cloud Tasks (Serverless To-Do App)
+# Armando Cloud Tasks
 
-A fully serverless, full-stack application built on AWS using:
-    •    S3 – Frontend hosting
-    •    API Gateway – RESTful API
-    •    Lambda (Python) – Business logic
-    •    DynamoDB – NoSQL database for tasks
+A **full-stack, fully serverless task management application** built on AWS.  
+This project demonstrates real-world cloud engineering skills by combining a public frontend with a production REST API and persistent storage.
 
-This project demonstrates real-world cloud engineering skills including API design, Lambda proxy integration, IAM configuration, CORS troubleshooting, and end-to-end deployment.
+---
 
-⸻
+## 🔗 Live Demo
 
-🚀 Live Architecture
+- **Frontend (S3 Static Website):**  
+  http://armando-static-website.s3-website-us-west-1.amazonaws.com
 
-Frontend (S3 Static Website)
-↓
-JavaScript fetch()
-↓
-API Gateway (/tasks)
-↓
-Lambda Functions
-    •    GET /tasks → returns all tasks
-    •    POST /tasks → creates a task
-    •    DELETE /tasks → deletes a task
-↓
-DynamoDB (ArmandoTodos table)
+- **API Endpoint (API Gateway):**  
+  https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
 
-⸻
+---
 
-🧱 Project Structure
+## 🏗 Architecture Overview
 
-armando-cloud-tasks/
-│
+**Browser**  
+→ **S3 Static Website**  
+→ **API Gateway (REST)**  
+→ **AWS Lambda (Python)**  
+→ **DynamoDB**
+
+- Frontend uses JavaScript `fetch()` to call the REST API  
+- API Gateway routes requests using Lambda proxy integration  
+- Lambda performs CRUD operations on DynamoDB  
+- CORS enabled for browser-based access  
+
+---
+
+## ✨ Features
+
+- View all tasks  
+- Add new tasks  
+- Delete existing tasks  
+- Fully serverless (no servers to manage)  
+- Persistent storage with DynamoDB  
+- Scales automatically  
+- Ultra low-cost AWS architecture  
+
+---
+
+## 🧱 Tech Stack
+
+- **Amazon S3** — Static frontend hosting  
+- **Amazon API Gateway** — REST API  
+- **AWS Lambda (Python 3.10)** — Backend logic  
+- **Amazon DynamoDB** — NoSQL database  
+- **IAM** — Fine-grained permissions per Lambda function  
+- **CORS** — Secure browser-to-API communication  
+
+---
+
+## 📂 Project Structure# Armando Cloud Tasks
+
+A **full-stack, fully serverless task management application** built on AWS.  
+This project demonstrates real-world cloud engineering skills by combining a public frontend with a production REST API and persistent storage.
+
+---
+
+## 🔗 Live Demo
+
+- **Frontend (S3 Static Website):**  
+  http://armando-static-website.s3-website-us-west-1.amazonaws.com
+
+- **API Endpoint (API Gateway):**  
+  https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
+
+---
+
+## 🏗 Architecture Overview
+
+**Browser**  
+→ **S3 Static Website**  
+→ **API Gateway (REST)**  
+→ **AWS Lambda (Python)**  
+→ **DynamoDB**
+
+- Frontend uses JavaScript `fetch()` to call the REST API  
+- API Gateway routes requests using Lambda proxy integration  
+- Lambda performs CRUD operations on DynamoDB  
+- CORS enabled for browser-based access  
+
+---
+
+## ✨ Features
+
+- View all tasks  
+- Add new tasks  
+- Delete existing tasks  
+- Fully serverless (no servers to manage)  
+- Persistent storage with DynamoDB  
+- Scales automatically  
+- Ultra low-cost AWS architecture  
+
+---
+
+## 🧱 Tech Stack
+
+- **Amazon S3** — Static frontend hosting  
+- **Amazon API Gateway** — REST API  
+- **AWS Lambda (Python 3.10)** — Backend logic  
+- **Amazon DynamoDB** — NoSQL database  
+- **IAM** — Fine-grained permissions per Lambda function  
+- **CORS** — Secure browser-to-API communication  
+
+---
+
+## 📂 Project Structurearmando-cloud-tasks/
 ├── README.md
 ├── frontend/
-│     └── index.html
-│
+│   └── index.html
 └── lambdas/
-      ├── get_all_tasks.py
-      ├── create_task.py
-      └── delete_task.py
+├── get_all_tasks.py
+├── create_task.py
+└── delete_task.py
 
-🛠 Technologies Used
+## 🧪 API Usage Examples
 
-S3 – Hosts the frontend UI
-API Gateway – REST API for /tasks
-Lambda (Python) – Serverless backend logic
-DynamoDB – NoSQL task storage
-IAM – Roles and permissions for secure access
-CORS – Enables browser-based frontend requests
-
-⸻
-
-🔥 Key Features
-    •    Add new tasks
-    •    Fetch all tasks
-    •    Delete tasks
-    •    Fully serverless — no backend servers needed
-    •    Real-time updates via DynamoDB
-    •    Scales instantly
-    •    Ultra-low cost architecture
-
-⸻
-
-🧪 Testing the API (curl)
-
-GET all tasks:
-curl https://your-api-url/dev/tasks
-
-POST create a new task:
-curl -X POST -H “Content-Type: application/json” -d ‘{“task”: “Study cloud engineering”}’ https://your-api-url/dev/tasks
-
-DELETE a task:
-curl -X DELETE -H “Content-Type: application/json” -d ‘{“id”: “your-task-id”}’ https://your-api-url/dev/tasks
+### Get all tasks
+```bashcurl -X POST -H "Content-Type: application/json" \
+-d '{"task":"Study cloud engineering"}' \curl -X DELETE -H "Content-Type: application/json" \
+-d '{"id":"TASK_ID_HERE"}' \
+https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/taskshttps://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/taskscurl https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
