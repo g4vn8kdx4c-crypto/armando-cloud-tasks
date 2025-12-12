@@ -58,16 +58,15 @@ https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
 ├── frontend/
 │   └── index.html
 └── lambdas/
-├── get_all_tasks.py
-├── create_task.py
-└── delete_task.py---
+    ├── get_all_tasks.py
+    ├── create_task.py
+    └── delete_task.py---
 
 ## 🧪 API Usage Examples
 
 ### Get all tasks
 ```bash
 curl https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/taskscurl -X POST -H "Content-Type: application/json" \
--d '{"task":"Study cloud engineering"}' \
-https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/taskscurl -X DELETE -H "Content-Type: application/json" \
+-d '{"task":"Study cloud engineering"}' \curl -X DELETE -H "Content-Type: application/json" \
 -d '{"id":"TASK_ID_HERE"}' \
-https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
+https://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/taskshttps://ja88qghpxd.execute-api.us-west-1.amazonaws.com/dev/tasks
